@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Master Dashboard — Henna by Sam</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="master.css" />
+  <link rel="stylesheet" href="master.css?v=20260903b" />
 </head>
 <body>
 
@@ -47,7 +47,10 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <img src="logo.png" alt="Henna by Sam" class="sidebar-logo" />
+        <div class="sidebar-header-top">
+          <img src="logo.png" alt="Henna by Sam" class="sidebar-logo" />
+          <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close menu">×</button>
+        </div>
         <div class="sidebar-label">Master Dashboard</div>
       </div>
 
@@ -135,6 +138,9 @@
         <a href="index.html" style="display:block;text-align:center;margin-top:0.75rem;font-size:0.7rem;color:var(--text-muted);">← Public Site</a>
       </div>
     </aside>
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -1128,16 +1134,16 @@
 
         tr.innerHTML =
           '<td class="td-name">' + escHtml(fullName) + '</td>' +
-          '<td>' +
+          '<td class="td-contact">' +
             '<div class="td-email">' + escHtml(b.email || '—') + '</div>' +
             (b.phone ? '<div class="td-phone">' + escHtml(b.phone) + '</div>' : '') +
           '</td>' +
           '<td class="td-service">' + escHtml(service) + '</td>' +
           '<td class="td-date">' + eventDate + '</td>' +
-          '<td>' + escHtml(b.location || '') + '</td>' +
-          '<td><span class="status-pill status-' + escHtml(status) + '">' + escHtml(statusLabel) + '</span></td>' +
+          '<td class="td-location">' + escHtml(b.location || '') + '</td>' +
+          '<td class="td-status"><span class="status-pill status-' + escHtml(status) + '">' + escHtml(statusLabel) + '</span></td>' +
           '<td class="td-submitted">' + submitted + '</td>' +
-          '<td>' +
+          '<td class="td-actions">' +
             '<div class="row-actions">' +
               '<button class="row-btn" data-action="view" data-id="' + escHtml(String(b.id)) + '" title="View details" aria-label="View booking">' +
                 '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>' +
@@ -1457,7 +1463,7 @@
         if (match) match.classList.add('active');
         setFilter(item.dataset.filter);
         /* Close sidebar on mobile */
-        document.getElementById('sidebar').classList.remove('open');
+        closeSidebar();
       });
     });
 
@@ -1466,7 +1472,7 @@
       document.querySelectorAll('.sidebar-nav-item').forEach(function(i){ i.classList.remove('active'); });
       document.getElementById('nav-calendar').classList.add('active');
       document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-      document.getElementById('sidebar').classList.remove('open');
+      closeSidebar();
       if (Crm.isVisible()) Crm.hide();
       if (Pay.isVisible()) Pay.hide();
       Cal.show();
@@ -1607,13 +1613,32 @@
     /* ═══════════════════════════════════════════
        MOBILE SIDEBAR TOGGLE
     ═══════════════════════════════════════════ */
-    var menuToggle = document.getElementById('menu-toggle');
-    menuToggle.addEventListener('click', function () {
-      document.getElementById('sidebar').classList.toggle('open');
-    });
+    var menuToggle      = document.getElementById('menu-toggle');
+    var sidebarEl       = document.getElementById('sidebar');
+    var sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    var sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+
+    function closeSidebar() {
+      if (sidebarEl) sidebarEl.classList.remove('open');
+      if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
+    }
+    function toggleSidebar() {
+      if (!sidebarEl) return;
+      var isOpen = sidebarEl.classList.toggle('open');
+      if (sidebarBackdrop) {
+        if (isOpen) sidebarBackdrop.classList.add('active');
+        else sidebarBackdrop.classList.remove('active');
+      }
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+    if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+    if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+
     /* Show toggle on small screens */
     function checkMobile() {
-      menuToggle.style.display = window.innerWidth <= 900 ? 'flex' : 'none';
+      if (menuToggle) menuToggle.style.display = window.innerWidth <= 900 ? 'flex' : 'none';
+      if (window.innerWidth > 900) closeSidebar();
     }
     window.addEventListener('resize', checkMobile);
     checkMobile();
@@ -2626,7 +2651,7 @@
             document.querySelectorAll('.sidebar-nav-item').forEach(function (i) { i.classList.remove('active'); });
             navPay.classList.add('active');
             document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
-            document.getElementById('sidebar').classList.remove('open');
+            closeSidebar();
             if (Cal.isVisible()) Cal.hide();
             if (Crm.isVisible()) Crm.hide();
             show();
@@ -3142,7 +3167,7 @@
             document.querySelectorAll('.sidebar-nav-item').forEach(function (i) { i.classList.remove('active'); });
             navCrm.classList.add('active');
             document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
-            document.getElementById('sidebar').classList.remove('open');
+            closeSidebar();
             if (Cal.isVisible()) Cal.hide();
             if (Pay.isVisible()) Pay.hide();
             show();
