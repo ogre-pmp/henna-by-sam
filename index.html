@@ -11,11 +11,11 @@
   <meta property="og:title" content="Henna by Sam — Let's Make Art" />
   <meta property="og:description" content="Luxury henna artistry for weddings, events and private occasions. Based in Aïn Merane, Chlef, Algeria." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/bridal_hands.jpg" />
+  <meta property="og:image" content="https://henna-by-sam.vercel.app/images/opt/bridal_hands-1200.jpg" />
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
   <title>Henna by Sam — Let's Make Art</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
 
@@ -89,9 +89,21 @@
       </div>
 
       <div class="hero-media reveal" aria-hidden="true">
-        <figure class="hero-tile hero-tile-side"><img src="images/forearm.jpg" alt="" /></figure>
-        <figure class="hero-tile hero-tile-main"><img src="images/bridal_hands.jpg" alt="" fetchpriority="high" /></figure>
-        <figure class="hero-tile hero-tile-side"><img src="images/arabic.jpg" alt="" /></figure>
+        <figure class="hero-tile hero-tile-side"><picture>
+  <source type="image/avif" srcset="images/opt/forearm-480.avif 480w, images/opt/forearm-800.avif 800w, images/opt/forearm-1200.avif 1200w" sizes="300px" />
+  <source type="image/webp" srcset="images/opt/forearm-480.webp 480w, images/opt/forearm-800.webp 800w, images/opt/forearm-1200.webp 1200w" sizes="300px" />
+  <img src="images/opt/forearm-800.jpg" srcset="images/opt/forearm-480.jpg 480w, images/opt/forearm-800.jpg 800w, images/opt/forearm-1200.jpg 1200w" sizes="300px" width="896" height="1200" decoding="async" alt="" loading="lazy" />
+</picture></figure>
+        <figure class="hero-tile hero-tile-main"><picture>
+  <source type="image/avif" srcset="images/opt/bridal_hands-480.avif 480w, images/opt/bridal_hands-800.avif 800w, images/opt/bridal_hands-1200.avif 1200w" sizes="(max-width: 640px) min(420px, 100vw), 460px" />
+  <source type="image/webp" srcset="images/opt/bridal_hands-480.webp 480w, images/opt/bridal_hands-800.webp 800w, images/opt/bridal_hands-1200.webp 1200w" sizes="(max-width: 640px) min(420px, 100vw), 460px" />
+  <img src="images/opt/bridal_hands-800.jpg" srcset="images/opt/bridal_hands-480.jpg 480w, images/opt/bridal_hands-800.jpg 800w, images/opt/bridal_hands-1200.jpg 1200w" sizes="(max-width: 640px) min(420px, 100vw), 460px" width="896" height="1200" decoding="async" alt="" fetchpriority="high" />
+</picture></figure>
+        <figure class="hero-tile hero-tile-side"><picture>
+  <source type="image/avif" srcset="images/opt/arabic-480.avif 480w, images/opt/arabic-800.avif 800w, images/opt/arabic-1200.avif 1200w" sizes="300px" />
+  <source type="image/webp" srcset="images/opt/arabic-480.webp 480w, images/opt/arabic-800.webp 800w, images/opt/arabic-1200.webp 1200w" sizes="300px" />
+  <img src="images/opt/arabic-800.jpg" srcset="images/opt/arabic-480.jpg 480w, images/opt/arabic-800.jpg 800w, images/opt/arabic-1200.jpg 1200w" sizes="300px" width="896" height="1200" decoding="async" alt="" loading="lazy" />
+</picture></figure>
       </div>
     </section>
 
@@ -99,7 +111,11 @@
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
         <figure class="about-media reveal">
-          <img src="images/artist.jpg" alt="Sam — henna artist applying mehndi at a bridal celebration" loading="lazy" />
+          <picture>
+            <source type="image/avif" srcset="images/opt/artist-480.avif 480w, images/opt/artist-800.avif 800w, images/opt/artist-1200.avif 1200w" sizes="(max-width: 960px) min(560px, 100vw), 520px" />
+            <source type="image/webp" srcset="images/opt/artist-480.webp 480w, images/opt/artist-800.webp 800w, images/opt/artist-1200.webp 1200w" sizes="(max-width: 960px) min(560px, 100vw), 520px" />
+            <img src="images/opt/artist-800.jpg" srcset="images/opt/artist-480.jpg 480w, images/opt/artist-800.jpg 800w, images/opt/artist-1200.jpg 1200w" sizes="(max-width: 960px) min(560px, 100vw), 520px" width="1200" height="896" decoding="async" alt="Sam — henna artist applying mehndi at a bridal celebration" loading="lazy" />
+          </picture>
           <figcaption class="about-stat">
             <span class="about-stat-number">8+</span>
             <span class="about-stat-label" data-i18n="about.badgeLabel">Years of Art</span>
@@ -190,32 +206,52 @@
 
         <ul class="gallery-grid" role="list">
           <li class="gallery-cell gallery-cell-tall reveal">
-            <button class="gallery-item" id="gallery-1" type="button" data-index="0" data-src="images/bridal_hands.jpg">
-              <img src="images/bridal_hands.jpg" alt="Intricate bridal mehndi — full mandala design on both hands" loading="lazy" />
+            <button class="gallery-item" id="gallery-1" type="button" data-index="0" data-src="images/opt/bridal_hands-1200.webp">
+              <picture>
+                <source type="image/avif" srcset="images/opt/bridal_hands-480.avif 480w, images/opt/bridal_hands-800.avif 800w, images/opt/bridal_hands-1200.avif 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <source type="image/webp" srcset="images/opt/bridal_hands-480.webp 480w, images/opt/bridal_hands-800.webp 800w, images/opt/bridal_hands-1200.webp 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <img src="images/opt/bridal_hands-800.jpg" srcset="images/opt/bridal_hands-480.jpg 480w, images/opt/bridal_hands-800.jpg 800w, images/opt/bridal_hands-1200.jpg 1200w" sizes="(max-width: 640px) 50vw, 360px" width="896" height="1200" decoding="async" alt="Intricate bridal mehndi — full mandala design on both hands" loading="lazy" />
+              </picture>
               <span class="gallery-label" data-i18n="gallery.item1">Bridal Mehndi</span>
             </button>
           </li>
           <li class="gallery-cell reveal">
-            <button class="gallery-item" id="gallery-2" type="button" data-index="1" data-src="images/both_hands.jpg">
-              <img src="images/both_hands.jpg" alt="Matching henna patterns on both hands" loading="lazy" />
+            <button class="gallery-item" id="gallery-2" type="button" data-index="1" data-src="images/opt/both_hands-1200.webp">
+              <picture>
+                <source type="image/avif" srcset="images/opt/both_hands-480.avif 480w, images/opt/both_hands-800.avif 800w, images/opt/both_hands-1200.avif 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <source type="image/webp" srcset="images/opt/both_hands-480.webp 480w, images/opt/both_hands-800.webp 800w, images/opt/both_hands-1200.webp 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <img src="images/opt/both_hands-800.jpg" srcset="images/opt/both_hands-480.jpg 480w, images/opt/both_hands-800.jpg 800w, images/opt/both_hands-1200.jpg 1200w" sizes="(max-width: 640px) 50vw, 360px" width="1200" height="896" decoding="async" alt="Matching henna patterns on both hands" loading="lazy" />
+              </picture>
               <span class="gallery-label" data-i18n="gallery.item4">Full Hands</span>
             </button>
           </li>
           <li class="gallery-cell reveal">
-            <button class="gallery-item" id="gallery-3" type="button" data-index="2" data-src="images/artist.jpg">
-              <img src="images/artist.jpg" alt="Sam applying bridal mehndi at a wedding celebration" loading="lazy" />
+            <button class="gallery-item" id="gallery-3" type="button" data-index="2" data-src="images/opt/artist-1200.webp">
+              <picture>
+                <source type="image/avif" srcset="images/opt/artist-480.avif 480w, images/opt/artist-800.avif 800w, images/opt/artist-1200.avif 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <source type="image/webp" srcset="images/opt/artist-480.webp 480w, images/opt/artist-800.webp 800w, images/opt/artist-1200.webp 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <img src="images/opt/artist-800.jpg" srcset="images/opt/artist-480.jpg 480w, images/opt/artist-800.jpg 800w, images/opt/artist-1200.jpg 1200w" sizes="(max-width: 640px) 50vw, 360px" width="1200" height="896" decoding="async" alt="Sam applying bridal mehndi at a wedding celebration" loading="lazy" />
+              </picture>
               <span class="gallery-label" data-i18n="gallery.item5">At Work</span>
             </button>
           </li>
           <li class="gallery-cell gallery-cell-tall reveal">
-            <button class="gallery-item" id="gallery-4" type="button" data-index="3" data-src="images/forearm.jpg">
-              <img src="images/forearm.jpg" alt="Elegant peacock and vine henna art on forearm" loading="lazy" />
+            <button class="gallery-item" id="gallery-4" type="button" data-index="3" data-src="images/opt/forearm-1200.webp">
+              <picture>
+                <source type="image/avif" srcset="images/opt/forearm-480.avif 480w, images/opt/forearm-800.avif 800w, images/opt/forearm-1200.avif 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <source type="image/webp" srcset="images/opt/forearm-480.webp 480w, images/opt/forearm-800.webp 800w, images/opt/forearm-1200.webp 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <img src="images/opt/forearm-800.jpg" srcset="images/opt/forearm-480.jpg 480w, images/opt/forearm-800.jpg 800w, images/opt/forearm-1200.jpg 1200w" sizes="(max-width: 640px) 50vw, 360px" width="896" height="1200" decoding="async" alt="Elegant peacock and vine henna art on forearm" loading="lazy" />
+              </picture>
               <span class="gallery-label" data-i18n="gallery.item2">Forearm Art</span>
             </button>
           </li>
           <li class="gallery-cell gallery-cell-tall reveal">
-            <button class="gallery-item" id="gallery-5" type="button" data-index="4" data-src="images/arabic.jpg">
-              <img src="images/arabic.jpg" alt="Arabic style bold floral henna on hand" loading="lazy" />
+            <button class="gallery-item" id="gallery-5" type="button" data-index="4" data-src="images/opt/arabic-1200.webp">
+              <picture>
+                <source type="image/avif" srcset="images/opt/arabic-480.avif 480w, images/opt/arabic-800.avif 800w, images/opt/arabic-1200.avif 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <source type="image/webp" srcset="images/opt/arabic-480.webp 480w, images/opt/arabic-800.webp 800w, images/opt/arabic-1200.webp 1200w" sizes="(max-width: 640px) 50vw, 360px" />
+                <img src="images/opt/arabic-800.jpg" srcset="images/opt/arabic-480.jpg 480w, images/opt/arabic-800.jpg 800w, images/opt/arabic-1200.jpg 1200w" sizes="(max-width: 640px) 50vw, 360px" width="896" height="1200" decoding="async" alt="Arabic style bold floral henna on hand" loading="lazy" />
+              </picture>
               <span class="gallery-label" data-i18n="gallery.item3">Arabic Style</span>
             </button>
           </li>
@@ -499,10 +535,10 @@
   </div>
 
   <!-- Locale files MUST load before script.js -->
-  <script src="locales/en.js"></script>
-  <script src="locales/ar.js"></script>
+  <script src="locales/en.js?v=2"></script>
+  <script src="locales/ar.js?v=2"></script>
   <!-- Supabase client (set credentials inside supabase.js) -->
-  <script src="supabase.js"></script>
-  <script src="script.js"></script>
+  <script src="supabase.js?v=2"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
