@@ -156,6 +156,7 @@ window.I18N_LOCALES.en = {
     firstName: 'Please enter your first name.',
     email:     'Please enter a valid email address.',
     service:   'Please select a service.',
+    submitError: 'Something went wrong. Please try again.',
   },
 
   toast: {
@@ -195,6 +196,8 @@ window.I18N_LOCALES.en = {
     close:     'Close image viewer',
     ariaLabel: 'Image viewer',
     imgAlt:    'Gallery image full size',
+    prev:      'Previous image',
+    next:      'Next image',
   },
 
 };
